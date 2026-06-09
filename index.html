@@ -143,6 +143,12 @@
   .cap h4{font-size:16px;margin:10px 0 7px}
   .cap p{font-size:13.5px;color:var(--muted)}
   .photo-slot{border:1.5px dashed var(--line-s);border-radius:16px;background:linear-gradient(135deg,rgba(22,154,94,.05),rgba(198,238,123,.08));display:grid;place-items:center;color:var(--muted);font-size:12.5px;min-height:170px;text-align:center;padding:22px}
+  .about-contact{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .contact-card{border:1px solid var(--line);border-radius:16px;padding:24px;background:linear-gradient(135deg,#fff,rgba(205,238,214,.38));box-shadow:var(--shadow)}
+  .contact-card h4{font-size:18px;margin:10px 0 7px;color:var(--ink)}
+  .contact-card p{font-size:13.5px;color:var(--muted);margin-bottom:10px}
+  .contact-card a{font-size:14px;font-weight:700;color:var(--green-d);text-decoration:none}
+  .contact-card a:hover{text-decoration:underline}
 
   .road{position:relative;padding-left:30px;border-left:2px solid var(--line-s);display:grid;gap:28px}
   .rstep{position:relative}
@@ -180,7 +186,7 @@
   @media(max-width:920px){
     .hero-grid,.mkt-grid,.flow,.cta-band,.pol-grid,.bg-grid{grid-template-columns:1fr}
     .hero-art{max-width:480px;margin:6px auto 0}
-    .cap-grid{grid-template-columns:1fr}
+    .cap-grid,.about-contact{grid-template-columns:1fr}
     .why-grid,.policy-extra,.mkt-cards,.bg-stats{grid-template-columns:repeat(2,1fr)}
     .cta-band{padding:34px}.hero{padding:48px 0 36px}
     .city-cap{position:static}.city-band{padding-top:54px}
@@ -234,6 +240,7 @@
       <a href="#policy" data-i18n="nav.policy"></a>
       <a href="#money" data-i18n="nav.revenue"></a>
       <a href="#how" data-i18n="nav.operations"></a>
+      <a href="#about" data-i18n="nav.about"></a>
       <a href="#road" data-i18n="nav.expansion"></a>
       <a href="#invest" data-i18n="nav.contact"></a>
     </nav>
@@ -499,7 +506,7 @@
 </section>
 
 <!-- GMV FOUNDATION -->
-<section class="band" id="base">
+<section class="band" id="about">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="kicker"><span class="idx">06</span><span data-i18n="mh.kicker"></span></div>
@@ -514,7 +521,19 @@
       <div class="cap"><div class="tag" data-i18n="mh.c5.tag"></div><h4 data-i18n="mh.c5.t"></h4><p data-i18n="mh.c5.b"></p></div>
       <div class="cap"><div class="tag" data-i18n="mh.c6.tag"></div><h4 data-i18n="mh.c6.t"></h4><p data-i18n="mh.c6.b"></p></div>
     </div>
-    <div style="margin-top:28px" class="rv"><div class="photo-slot" data-i18n="mh.photo"></div></div>
+    <div class="about-contact rv">
+      <div class="contact-card">
+        <div class="tag" data-i18n="mh.contact.tag"></div>
+        <h4 data-i18n="mh.contact.name"></h4>
+        <p data-i18n="mh.contact.role"></p>
+        <a href="mailto:akardia007@hanmail.net">akardia007@hanmail.net</a>
+      </div>
+      <div class="contact-card">
+        <div class="tag" data-i18n="mh.contact2.tag"></div>
+        <h4 data-i18n="mh.contact2.name"></h4>
+        <p data-i18n="mh.contact2.role"></p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -546,6 +565,7 @@
         <input id="f-email" type="email" data-i18n-ph="cta.ph3" autocomplete="email">
         <button class="btn btn-primary" id="f-send" data-i18n="cta.btn"></button>
         <span class="note" data-i18n="cta.note"></span>
+        <span class="note"><b data-i18n="cta.managerLabel"></b> <span data-i18n="cta.manager"></span> · <a href="mailto:akardia007@hanmail.net" style="color:#C6EE7B;text-decoration:none;font-weight:700">akardia007@hanmail.net</a></span>
       </div>
     </div>
   </div>
@@ -660,28 +680,34 @@ const I18N = {
     "why.c.b":"제조·충전·스왑 설비를 직접 보유하지 않고 운영 수익에 집중하므로, 초기 투자 부담이 가볍습니다.",
     "why.d.t":"쌓이는 운영 가치",
     "why.d.b":"운행·정비·보험 기록이 쌓일수록 보험사·금융사·제조사와의 협상력이 커집니다.",
-    "mh.kicker":"실행 기반",
-    "mh.title":"정책과 현장을 잇는 기반",
-    "mh.sub":"GMV는 현지 정책 협의 기반과 한·베 사업 네트워크를 활용해 운영 구역 사업을 설계하고 실행합니다.",
-    "mh.c1.tag":"정부 채널",
-    "mh.c1.t":"현지 정책 협의 기반",
-    "mh.c1.b":"정책 방향에 맞는 운영 구조를 현지 협의 기반으로 설계합니다.",
-    "mh.c2.tag":"인증",
-    "mh.c2.t":"인증·점검 체계 검토",
-    "mh.c2.b":"차량·배터리 점검과 운영 기준을 제도권 기준에 맞춰 검토합니다.",
-    "mh.c3.tag":"지방정부",
-    "mh.c3.t":"지역별 운영 협의 경험",
-    "mh.c3.b":"도시·지역별 운영 조건을 반영해 운영 구역 적용 가능성을 검토합니다.",
-    "mh.c4.tag":"네트워크",
-    "mh.c4.t":"한·베 사업 네트워크 활용",
-    "mh.c4.b":"한국과 베트남 간 사업 네트워크를 활용해 파트너십을 확장합니다.",
-    "mh.c5.tag":"정책 정합",
-    "mh.c5.t":"정책 부합형 설계",
-    "mh.c5.b":"현지 규제와 인증 기준에 맞춰 운영 구조를 설계합니다.",
-    "mh.c6.tag":"운영 실행",
-    "mh.c6.t":"현장 실행",
-    "mh.c6.b":"운영 구역 설정, 관리, 점검 프로세스를 현장에서 실행합니다.",
+    "mh.kicker":"회사소개",
+    "mh.title":"MHGROUP과 GMV가 만드는 베트남 EV 운영 인프라",
+    "mh.sub":"GMV는 베트남 전기이륜차 전환 시장에서 차량 공급, 운영 구역 등록, 안전 점검, 정비, 보험, 금융 연결을 하나의 운영 구조로 묶는 EV 운영 인프라 플랫폼입니다. MHGROUP은 현지 네트워크와 운영 기반을 제공하고, GMV는 플랫폼·정산·운영 구조를 설계합니다.",
+    "mh.c1.tag":"MHGROUP",
+    "mh.c1.t":"현지 네트워크와 실행 기반",
+    "mh.c1.b":"베트남 현지 네트워크, 운영 구역 협의, 현장 실행 기반을 제공합니다.",
+    "mh.c2.tag":"LEADERSHIP",
+    "mh.c2.t":"민항 회장",
+    "mh.c2.b":"MHGROUP의 현지 사업 방향과 대외 협의 기반을 이끄는 역할입니다.",
+    "mh.c3.tag":"CEO",
+    "mh.c3.t":"임창옥 대표",
+    "mh.c3.b":"GMV 사업 추진과 파트너 협의, 현장 실행 구조를 총괄하는 역할입니다.",
+    "mh.c4.tag":"GMV",
+    "mh.c4.t":"EV 운영 플랫폼 설계",
+    "mh.c4.b":"등록·점검·정산·운영 데이터 관리 체계를 설계합니다.",
+    "mh.c5.tag":"STRATEGY",
+    "mh.c5.t":"사업 구조와 투자 커뮤니케이션",
+    "mh.c5.b":"운영 수익 구조, 파트너 협의, 투자자 커뮤니케이션을 정리합니다.",
+    "mh.c6.tag":"OPERATIONS",
+    "mh.c6.t":"운영 구역 기반 확장",
+    "mh.c6.b":"1호 운영 구역 검증 후 5만 대, 30만 대, 장기 100만 대 네트워크로 확장합니다.",
     "mh.photo":"〔현장 사진 영역 — 운영 구역, 미팅, 협의 사진으로 교체〕",
+    "mh.contact.tag":"주요 담당",
+    "mh.contact.name":"이귀재 / Lee Gui Jae",
+    "mh.contact.role":"사업기획 · 투자자 커뮤니케이션 · 파트너 협의",
+    "mh.contact2.tag":"사업 구조",
+    "mh.contact2.name":"MHGROUP × GMV",
+    "mh.contact2.role":"현지 네트워크와 EV 운영 플랫폼을 결합한 베트남 전동화 운영 인프라 모델",
     "road.kicker":"실행 로드맵",
     "road.title":"300~500대 검증 후 100만 대 운영 네트워크로 확장합니다",
     "road.sub":"첫 운영 구역에서 수익 구조를 검증한 뒤, 5만 대·30만 대 운영 표준화를 거쳐 장기적으로 100만 대 네트워크를 목표로 합니다.",
@@ -697,14 +723,16 @@ const I18N = {
     "road.s4.ph":"4단계 · 36개월+",
     "road.s4.t":"광역 확대",
     "road.s4.b":"하노이 저배출구역 확대 일정에 맞춰 광역 운영 구역으로 확장하며, 장기 운영 목표인 100만 대 네트워크를 향해 확장합니다.",
-    "cta.title":"투자·협력 자료를 요청해 주세요",
-    "cta.sub":"재무 모델·운영 구조 등 세부 자료는 검토 승인 후 자료실에서 제공합니다. 소속과 연락처를 남겨 주시면 담당자가 연결해 드립니다.",
+    "cta.title":"투자·전략 제휴 문의",
+    "cta.sub":"운영 구조, 재무 모델, 파트너십 자료는 검토 승인 후 제공합니다. 담당자가 직접 연결해 드립니다.",
     "cta.ph1":"성함",
     "cta.ph2":"소속 / 직책",
     "cta.ph3":"이메일",
     "cta.btn":"자료 요청 보내기",
-    "cta.note":"요청해 주시면 비공개 검토 자료 접근 절차를 안내해 드립니다.",
-    "foot.tag":"GMV — 베트남 전동화 운영·안전 인프라.",
+    "cta.note":"담당: 이귀재 / Lee Gui Jae",
+    "cta.managerLabel":"Email:",
+    "cta.manager":"akardia007@hanmail.net",
+    "foot.tag":"GMV — MHGROUP과 함께 추진하는 베트남 전동화 운영·안전 인프라.",
     "foot.srcLabel":"데이터 출처",
     "foot.srcNote":"이 페이지의 정책·시장 수치는 공개 자료를 기준으로 하며, 상세 근거는 자료실에서 제공합니다.",
     "foot.copy":"© 2026 GMV — Green Mobility Vietnam.",
@@ -713,6 +741,7 @@ const I18N = {
     "nav.policy":"정책로드맵",
     "nav.revenue":"수익구조",
     "nav.operations":"운영모델",
+    "nav.about":"회사소개",
     "nav.expansion":"확장전략",
     "nav.contact":"투자문의",
     "hero.s2n":"300~500대",
@@ -833,28 +862,34 @@ const I18N = {
     "why.c.b":"GMV không sở hữu thiết bị sản xuất, sạc hay đổi pin, giúp vốn ban đầu nhẹ và tập trung vào doanh thu vận hành.",
     "why.d.t":"Giá trị tích lũy",
     "why.d.b":"Hồ sơ vận hành, bảo dưỡng và bảo hiểm càng dày, năng lực thương lượng với bảo hiểm, tài chính và nhà sản xuất càng lớn.",
-    "mh.kicker":"Nền tảng triển khai",
-    "mh.title":"Nền tảng kết nối chính sách với hiện trường",
-    "mh.sub":"GMV thiết kế và triển khai mô hình khu vực vận hành dựa trên nền tảng tham vấn chính sách địa phương và mạng lưới kinh doanh Hàn–Việt.",
-    "mh.c1.tag":"Kênh chính phủ",
-    "mh.c1.t":"Nền tảng tham vấn chính sách",
-    "mh.c1.b":"Cấu trúc vận hành được thiết kế theo định hướng chính sách và điều kiện địa phương.",
-    "mh.c2.tag":"Chứng nhận",
-    "mh.c2.t":"Rà soát hệ thống chứng nhận · kiểm tra",
-    "mh.c2.b":"Tiêu chuẩn kiểm tra xe, pin và vận hành được rà soát theo định hướng phù hợp với hệ thống quản lý.",
-    "mh.c3.tag":"Địa phương",
-    "mh.c3.t":"Kinh nghiệm trao đổi theo khu vực",
-    "mh.c3.b":"Điều kiện vận hành của từng đô thị và địa phương được phản ánh trong mô hình khu vực vận hành.",
-    "mh.c4.tag":"Mạng lưới",
-    "mh.c4.t":"Tận dụng mạng lưới kinh doanh Hàn–Việt",
-    "mh.c4.b":"Mạng lưới đối tác Hàn Quốc và Việt Nam được sử dụng để mở rộng quan hệ hợp tác.",
-    "mh.c5.tag":"Phù hợp chính sách",
-    "mh.c5.t":"Thiết kế theo chính sách",
-    "mh.c5.b":"Cấu trúc vận hành được thiết kế đáp ứng quy định và tiêu chuẩn chứng nhận địa phương.",
-    "mh.c6.tag":"Vận hành",
-    "mh.c6.t":"Triển khai thực địa",
-    "mh.c6.b":"Thiết lập khu vực vận hành, quản lý và quy trình kiểm tra được thực hiện tại hiện trường.",
+    "mh.kicker":"Giới thiệu công ty",
+    "mh.title":"Hạ tầng vận hành EV tại Việt Nam do MHGROUP và GMV phát triển",
+    "mh.sub":"GMV là nền tảng hạ tầng vận hành EV cho thị trường chuyển đổi xe hai bánh điện tại Việt Nam, kết nối cung ứng xe, đăng ký khu vực vận hành, kiểm tra an toàn, bảo dưỡng, bảo hiểm và tài chính thành một cấu trúc vận hành thống nhất. MHGROUP cung cấp mạng lưới địa phương và nền tảng triển khai, còn GMV thiết kế nền tảng, thanh toán và cấu trúc vận hành.",
+    "mh.c1.tag":"MHGROUP",
+    "mh.c1.t":"Mạng lưới địa phương và nền tảng triển khai",
+    "mh.c1.b":"Cung cấp mạng lưới tại Việt Nam, trao đổi khu vực vận hành và nền tảng triển khai thực địa.",
+    "mh.c2.tag":"LEADERSHIP",
+    "mh.c2.t":"Chủ tịch Minh Hằng",
+    "mh.c2.b":"Định hướng phát triển kinh doanh tại Việt Nam và hỗ trợ nền tảng đối ngoại.",
+    "mh.c3.tag":"CEO",
+    "mh.c3.t":"CEO Lim Chang Ok",
+    "mh.c3.b":"Phụ trách thúc đẩy dự án GMV, trao đổi đối tác và cấu trúc triển khai thực địa.",
+    "mh.c4.tag":"GMV",
+    "mh.c4.t":"Thiết kế nền tảng vận hành EV",
+    "mh.c4.b":"Thiết kế hệ thống đăng ký, kiểm tra, thanh toán và quản lý dữ liệu vận hành.",
+    "mh.c5.tag":"STRATEGY",
+    "mh.c5.t":"Cấu trúc kinh doanh và truyền thông đầu tư",
+    "mh.c5.b":"Chuẩn hóa mô hình doanh thu vận hành, trao đổi đối tác và thông tin cho nhà đầu tư.",
+    "mh.c6.tag":"OPERATIONS",
+    "mh.c6.t":"Mở rộng theo khu vực vận hành",
+    "mh.c6.b":"Sau kiểm chứng khu vực đầu tiên, mở rộng lên 50.000 xe, 300.000 xe và dài hạn là mạng lưới 1 triệu xe.",
     "mh.photo":"〔Khu vực ảnh thực địa — thay bằng ảnh khu vực vận hành, cuộc họp hoặc làm việc〕",
+    "mh.contact.tag":"Người phụ trách",
+    "mh.contact.name":"Lee Gui Jae",
+    "mh.contact.role":"Kế hoạch kinh doanh · truyền thông nhà đầu tư · trao đổi đối tác",
+    "mh.contact2.tag":"Cấu trúc dự án",
+    "mh.contact2.name":"MHGROUP × GMV",
+    "mh.contact2.role":"Mô hình hạ tầng vận hành điện hóa tại Việt Nam kết hợp mạng lưới địa phương và nền tảng EV",
     "road.kicker":"Lộ trình triển khai",
     "road.title":"Từ kiểm chứng 300–500 xe đến mạng lưới vận hành 1 triệu xe",
     "road.sub":"Sau khi kiểm chứng cấu trúc doanh thu tại khu vực vận hành đầu tiên, GMV mở rộng lên 50.000 xe, 300.000 xe và hướng tới mạng lưới 1 triệu xe trong dài hạn.",
@@ -870,14 +905,16 @@ const I18N = {
     "road.s4.ph":"Giai đoạn 4 · 36 tháng+",
     "road.s4.t":"Mở rộng quy mô vùng",
     "road.s4.b":"Mở rộng theo lộ trình khu phát thải thấp của Hà Nội và hướng tới mục tiêu dài hạn là mạng lưới vận hành 1 triệu xe.",
-    "cta.title":"Yêu cầu tài liệu đầu tư & hợp tác",
-    "cta.sub":"Mô hình tài chính và cấu trúc vận hành được cung cấp tại phòng tài liệu sau khi xét duyệt. Vui lòng để lại đơn vị và liên hệ để được kết nối.",
+    "cta.title":"Liên hệ đầu tư và hợp tác chiến lược",
+    "cta.sub":"Tài liệu về cấu trúc vận hành, mô hình tài chính và hợp tác sẽ được cung cấp sau bước rà soát. Người phụ trách sẽ liên hệ trực tiếp.",
     "cta.ph1":"Họ tên",
     "cta.ph2":"Đơn vị / Chức vụ",
     "cta.ph3":"Email",
     "cta.btn":"Gửi yêu cầu tài liệu",
-    "cta.note":"Sau khi gửi, bạn sẽ nhận hướng dẫn truy cập tài liệu xét duyệt.",
-    "foot.tag":"GMV — Hạ tầng vận hành & an toàn cho điện hóa giao thông Việt Nam.",
+    "cta.note":"Người phụ trách: Lee Gui Jae",
+    "cta.managerLabel":"Email:",
+    "cta.manager":"akardia007@hanmail.net",
+    "foot.tag":"GMV — Hạ tầng vận hành và an toàn cho quá trình điện hóa tại Việt Nam cùng MHGROUP.",
     "foot.srcLabel":"Nguồn dữ liệu",
     "foot.srcNote":"Số liệu chính sách và thị trường dựa trên tài liệu công khai; căn cứ chi tiết cung cấp tại phòng tài liệu.",
     "foot.copy":"© 2026 GMV — Green Mobility Vietnam.",
@@ -1006,28 +1043,34 @@ const I18N = {
     "why.c.b":"GMV不持有制造、充电或换电硬件，将投入集中在运营收益上。",
     "why.d.t":"逐步累积的价值",
     "why.d.b":"运营、维保和保险记录不断积累后，与保险、金融和制造商的谈判力会增强。",
-    "mh.kicker":"执行基础",
-    "mh.title":"连接政策与现场的执行基础",
-    "mh.sub":"GMV依托本地政策协商基础和韩越业务网络，设计并执行运营区域业务。",
-    "mh.c1.tag":"政策",
-    "mh.c1.t":"本地政策协商基础",
-    "mh.c1.b":"根据政策方向和本地条件设计运营结构。",
-    "mh.c2.tag":"认证",
-    "mh.c2.t":"认证·检查体系评估",
-    "mh.c2.b":"依据制度要求评估车辆、电池和运营标准。",
-    "mh.c3.tag":"区域",
-    "mh.c3.t":"区域运营协商经验",
-    "mh.c3.b":"将城市和地区运营条件反映到运营区域模型中。",
-    "mh.c4.tag":"网络",
-    "mh.c4.t":"韩越业务网络",
-    "mh.c4.b":"通过韩越业务网络拓展合作关系。",
-    "mh.c5.tag":"政策匹配",
-    "mh.c5.t":"符合政策的设计",
-    "mh.c5.b":"运营结构按照本地监管和认证标准进行设计。",
-    "mh.c6.tag":"执行",
-    "mh.c6.t":"现场执行",
-    "mh.c6.b":"在现场执行运营区域设置、管理和检查流程。",
+    "mh.kicker":"公司介绍",
+    "mh.title":"MHGROUP与GMV共同打造越南EV运营基础设施",
+    "mh.sub":"GMV是面向越南电动两轮车转型市场的EV运营基础设施平台，将车辆供应、运营区域登记、安全检查、维保、保险和金融连接为统一的运营结构。MHGROUP提供越南本地网络和落地基础，GMV负责平台、结算与运营结构设计。",
+    "mh.c1.tag":"MHGROUP",
+    "mh.c1.t":"本地网络与执行基础",
+    "mh.c1.b":"提供越南本地网络、运营区域协商和现场执行基础。",
+    "mh.c2.tag":"LEADERSHIP",
+    "mh.c2.t":"Minh Hằng 主席",
+    "mh.c2.b":"负责越南本地业务方向和对外协商基础。",
+    "mh.c3.tag":"CEO",
+    "mh.c3.t":"Lim Chang Ok 代表",
+    "mh.c3.b":"负责GMV项目推进、合作伙伴沟通和现场执行结构。",
+    "mh.c4.tag":"GMV",
+    "mh.c4.t":"EV运营平台设计",
+    "mh.c4.b":"设计登记、检查、结算和运营数据管理体系。",
+    "mh.c5.tag":"STRATEGY",
+    "mh.c5.t":"业务结构与投资沟通",
+    "mh.c5.b":"整理运营收益结构、合作伙伴协商和投资者沟通。",
+    "mh.c6.tag":"OPERATIONS",
+    "mh.c6.t":"基于运营区域的扩张",
+    "mh.c6.b":"首个运营区域验证后，扩展至5万辆、30万辆，并长期建设100万辆级运营网络。",
     "mh.photo":"〔现场照片区域 — 替换为运营区域、会议或现场执行照片〕",
+    "mh.contact.tag":"主要负责人",
+    "mh.contact.name":"Lee Gui Jae",
+    "mh.contact.role":"业务规划 · 投资者沟通 · 合作伙伴协商",
+    "mh.contact2.tag":"项目结构",
+    "mh.contact2.name":"MHGROUP × GMV",
+    "mh.contact2.role":"结合越南本地网络与EV运营平台的电动化运营基础设施模式",
     "road.kicker":"执行路线图",
     "road.title":"从300–500辆验证，到100万辆运营网络",
     "road.sub":"在首个运营区域验证收益结构后，GMV扩展至5万辆、30万辆，并长期建设100万辆级运营网络。",
@@ -1043,14 +1086,16 @@ const I18N = {
     "road.s4.ph":"阶段4 · 36个月+",
     "road.s4.t":"区域级扩张",
     "road.s4.b":"配合河内低排放区域扩大节奏，向更大范围的运营区域扩张，长期目标是建设100万辆级运营网络。",
-    "cta.title":"申请投资与战略合作资料",
-    "cta.sub":"财务模型和详细运营资料将在审核后通过资料室提供。请留下机构和联系方式，我们将与您联系。",
+    "cta.title":"投资与战略合作咨询",
+    "cta.sub":"运营结构、财务模型和合作资料将在审核后提供。负责人将直接联系。",
     "cta.ph1":"姓名",
     "cta.ph2":"机构 / 职务",
     "cta.ph3":"邮箱",
     "cta.btn":"发送申请",
-    "cta.note":"申请后将收到保密审核资料的访问流程。",
-    "foot.tag":"GMV — 越南电动出行的运营与安全基础设施。",
+    "cta.note":"负责人：Lee Gui Jae",
+    "cta.managerLabel":"Email:",
+    "cta.manager":"akardia007@hanmail.net",
+    "foot.tag":"GMV — 与MHGROUP共同推进的越南电动化运营与安全基础设施。",
     "foot.srcLabel":"数据来源",
     "foot.srcNote":"政策和市场数据基于公开资料；详细依据将在资料室提供。",
     "foot.copy":"© 2026 GMV — Green Mobility Vietnam.",
@@ -1059,6 +1104,7 @@ const I18N = {
     "nav.policy":"政策路线图",
     "nav.revenue":"收益结构",
     "nav.operations":"运营模式",
+    "nav.about":"公司介绍",
     "nav.expansion":"扩张战略",
     "nav.contact":"投资咨询",
     "hero.s2n":"300–500辆",
@@ -1179,27 +1225,27 @@ const I18N = {
     "why.c.b":"GMV holds no manufacturing, charging or swap hardware, keeping the upfront investment light and focused on operating revenue.",
     "why.d.t":"Value that compounds",
     "why.d.b":"As operating, servicing and insurance records build up, bargaining power with insurers, lenders and manufacturers grows.",
-    "mh.kicker":"Execution base",
-    "mh.title":"A base that links policy to the field",
-    "mh.sub":"GMV designs and executes its operating zone model using a local policy consultation base and Korea–Vietnam business networks.",
-    "mh.c1.tag":"Government",
-    "mh.c1.t":"Local policy consultation base",
-    "mh.c1.b":"Operating structures are designed in line with policy direction and local conditions.",
-    "mh.c2.tag":"Certification",
-    "mh.c2.t":"Certification and inspection review",
-    "mh.c2.b":"Vehicle, battery and operating standards are reviewed in line with institutional requirements.",
-    "mh.c3.tag":"Provincial",
-    "mh.c3.t":"Regional operating consultation experience",
-    "mh.c3.b":"City and regional operating conditions are reflected in the operating zone model.",
-    "mh.c4.tag":"Network",
-    "mh.c4.t":"Korea–Vietnam business network",
-    "mh.c4.b":"Partnerships expand through Korea–Vietnam business networks.",
-    "mh.c5.tag":"Policy fit",
-    "mh.c5.t":"Policy-aligned design",
-    "mh.c5.b":"Operating structures are designed to meet local regulation and certification standards.",
-    "mh.c6.tag":"Operations",
-    "mh.c6.t":"Field execution",
-    "mh.c6.b":"Operating zone setup, management and inspection processes are executed on the ground.",
+    "mh.kicker":"Company",
+    "mh.title":"MHGROUP and GMV Build Vietnam’s EV Operating Infrastructure",
+    "mh.sub":"GMV is an EV operating infrastructure platform for Vietnam’s electric two-wheeler transition, connecting vehicle supply, operating zone registration, safety inspection, maintenance, insurance and finance into one operating structure. MHGROUP provides local network and operating foundation, while GMV designs the platform, settlement and operating structure.",
+    "mh.c1.tag":"MHGROUP",
+    "mh.c1.t":"Local Network and Execution Base",
+    "mh.c1.b":"Provides Vietnam local network, operating zone consultation and field execution foundation.",
+    "mh.c2.tag":"LEADERSHIP",
+    "mh.c2.t":"Chairwoman Minh Hằng",
+    "mh.c2.b":"Leads local business direction and external consultation foundation in Vietnam.",
+    "mh.c3.tag":"CEO",
+    "mh.c3.t":"CEO Lim Chang Ok",
+    "mh.c3.b":"Leads GMV project execution, partner discussion and field operating structure.",
+    "mh.c4.tag":"GMV",
+    "mh.c4.t":"EV Operating Platform Design",
+    "mh.c4.b":"Designs registration, inspection, settlement and operating data management systems.",
+    "mh.c5.tag":"STRATEGY",
+    "mh.c5.t":"Business Structure and Investor Communication",
+    "mh.c5.b":"Organizes operating revenue structure, partner discussion and investor communication.",
+    "mh.c6.tag":"OPERATIONS",
+    "mh.c6.t":"Operating Zone-Based Expansion",
+    "mh.c6.b":"After validating the first operating zone, GMV expands toward 50,000 vehicles, 300,000 vehicles and a long-term 1 million vehicle network.",
     "mh.photo":"〔Field photo area — replace with operating zone, meeting or field execution photos〕",
     "road.kicker":"Execution roadmap",
     "road.title":"From 300–500 Vehicle Validation to a 1 Million Vehicle Operating Network",
@@ -1216,14 +1262,14 @@ const I18N = {
     "road.s4.ph":"Phase 4 · 36 Months+",
     "road.s4.t":"Regional Expansion",
     "road.s4.b":"Expand with Hanoi’s low-emission zone roadmap and move toward the long-term target of a 1 million vehicle operating network.",
-    "cta.title":"Request investor & partnership materials",
-    "cta.sub":"The financial model and operating detail are shared in the data room after review. Please leave your organisation and contact, and we will be in touch.",
+    "cta.title":"Investment & Strategic Partnership Contact",
+    "cta.sub":"Operating structure, financial model and partnership materials are provided after review. The project lead will contact you directly.",
     "cta.ph1":"Full name",
     "cta.ph2":"Organisation / role",
     "cta.ph3":"Email",
     "cta.btn":"Send request",
-    "cta.note":"On request, you'll receive access steps for the confidential review materials.",
-    "foot.tag":"GMV — operating and safety infrastructure for Vietnam's electric mobility.",
+    "cta.note":"Project lead: Lee Gui Jae",
+    "foot.tag":"GMV — Vietnam electrification operating and safety infrastructure with MHGROUP.",
     "foot.srcLabel":"Data sources",
     "foot.srcNote":"Policy and market figures are based on public material; detailed backing is provided in the data room.",
     "foot.copy":"© 2026 GMV — Green Mobility Vietnam.",
@@ -1232,6 +1278,7 @@ const I18N = {
     "nav.policy":"Policy",
     "nav.revenue":"Revenue",
     "nav.operations":"Operations",
+    "nav.about":"Company",
     "nav.expansion":"Expansion",
     "nav.contact":"Contact",
     "hero.s2n":"300–500",
@@ -1283,9 +1330,9 @@ document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",
 document.getElementById("f-send").addEventListener("click",()=>{
   const lang=document.documentElement.lang;
   const name=document.getElementById("f-name").value.trim();const org=document.getElementById("f-org").value.trim();const email=document.getElementById("f-email").value.trim();
-  const subj=encodeURIComponent("[GMV] Data room request");
+  const subj=encodeURIComponent("[GMV] Investment / Partnership Inquiry");
   const body=encodeURIComponent("Name: "+name+"\nOrganisation: "+org+"\nEmail: "+email+"\nLanguage: "+lang);
-  window.location.href="mailto:invest@gmv-platform.com?subject="+subj+"&body="+body;
+  window.location.href="mailto:akardia007@hanmail.net?subject="+subj+"&body="+body;
 });
 if ("IntersectionObserver" in window) {
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});
